@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>object literal extensions </title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var price = 5.5, quantity = 3;
+		// var productView = {
+		// 	price,
+		// 	quantity,
+		// }
+		// console.log(productView);
+		// // result will be {price: 5.5, quantity: 3} 
+
+		// example 2
+		// var price = 5.5, quantity = 3;
+		// var productView = {
+		// 	price:10,
+		// 	quantity:1,
+		// 	'calculate Value'(){
+		// 		return this.price * this.quantity;
+		// 	}
+		// }
+		// // console.log(productView.calculateValue());
+		// console.log(productView['calculate Value']());
+
+		// example 3 
+		// var field = 'dynamicField'	;
+
+		// var price = 5.99;
+		// var productView = {
+		// 	[field +'-001']:price
+		// };
+		// console.log(productView);
+
+		// example 4 
+		// var method = 'dynamicField'	;
+
+		// var price = 5.99;
+		// var productView = {
+		// 	[method +'-001'](){
+		// 		console.log('in a method');
+		// 	}
+		// };
+		// productView['dynamicField-001']();
+
+		// example 5 
+		var ident = 'productId';
+		var flag = 10;
+		var productView = {
+			get [ident] () {return flag; },
+			set [ident] (value) {flag = value}
+		}
+
+		console.log(productView.productId);
+		
+	</script>
+</body>
+</html>

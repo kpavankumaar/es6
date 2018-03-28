@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rest and spread</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function sumOfNumbers (info , ...catagories){
+			console.log(catagories);
+			console.log(arguments.length);
+			console.log(Math.max(...catagories));
+			var catagories1 = [...catagories];
+			// another way of creating an array with spread parameter
+			var catagories2 = Array(...catagories);
+			var catagories3 = Array(...[,,]);
+			// spread operator on a string 
+			var catagories4 = Math.max(...'4321');
+			// spread operator will break out a string into its individual characters 
+			var codeArray = ['A',...'BCD','E'];
+			console.log(codeArray); // ["A", "B", "C", "D", "E"]
+			catagories1[0]=15;
+			console.log(catagories4);
+		}
+		sumOfNumbers(10,20,30,40);
+		
+		
+
+
+		var searchCatagories = new Function('...catagories','return catagories');
+		console.log(searchCatagories('test', 'run ', 'angry'));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		'use strict'
+		// example 1 
+		// let productId = 12;
+		// {
+		// 	let productId = 2000;
+		// }
+		// console.log(productId);
+
+		// example 2 
+
+		// function updateProductId(){
+		// 	productId = 12
+		// }
+		// let productId = 15;
+		// updateProductId();
+		// console.log(productId);
+
+		// example 3 
+		// let productId = 42;
+		// for (let productId = 0 ; productId< 10 ; productId++){
+
+		// }
+		// console.log(productId);
+
+		// // problem in es5 
+
+		// let updateFunctions = [];
+		// // for ( var i = 0 ; i < 2 ; i++ ){
+		// for ( let i = 0 ; i < 2 ; i++ ){			
+		// 	updateFunctions.push(function(){return i;});
+		// }
+		// console.log(updateFunctions[1]());
+
+		// example 4
+		// const funnyNumber ;
+
+		// console.log(funnyNumber);
+		// you must initialize the constant otherwise console will throw error
+
+		//  example 5 
+		const funnyNumber = 100;
+		if (funnyNumber > 0) {
+			const funnyNumber = 10 ;
+		}
+		console.log(funnyNumber);
+		// value of funnyNumber is 100 because block scoping
+
+	</script>
+</body>
+</html>

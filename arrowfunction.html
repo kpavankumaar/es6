@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>arrow function</title>
+</head>
+<body>
+	<script type="text/javascript">
+		'use strict';
+		//example 1
+		// var getPrice = () => 5.99;
+		// console.log(typeof getPrice);
+		// console.log(getPrice());
+		// function keyword is removed and return statement is not needed
+
+		// example 2 
+		// function has one parameter 
+		// var getPrice = count => count * 4 ;
+		// console.log(getPrice(2));
+
+		// function has two parameters and single line 
+		// var getPrice = (count ,tax) => count * 4 * (1 + tax);
+		// console.log(getPrice(4,10));
+
+		// function has two parameters and multi line statements
+		// inside the multiline statements we use return statement.
+
+		// var getPrice = (count ,tax) => {
+		// 	var price = count * 4;
+		// 	price *= (1 + tax);
+		// 	return price;
+		// }
+		// console.log(getPrice(4,0.1));
+		// main purpose of arrow function is handling the this keyword 
+		// document.addEventListener('click',function(){
+		// 	console.log(this);
+		// });
+		// this keyword will return #document.
+
+		// lets replace this with arrow function
+		document.addEventListener('click', () => {
+			console.log(this);
+		})
+		// value of this keyword is window object instead current object #document
+
+	// example 3
+
+		// var invoice = {
+		// 	number : 123 ,
+		// 	process : function(){
+		// 		console.log(this);
+		// 	}
+		// };
+		// invoice.process();
+		// this keyword would return invoice object 
+		// var invoice = {
+		// 	number : 123 ,
+		// 	process :  () => {console.log(this.number);
+		// 	}
+		// };
+		// invoice.process();
+
+		// this keyword represent window object and for arrow function context for this is window 
+	
+	// example 4 
+		// var invoice = {
+		// 	number : 123 ,
+		// 	process : function(){
+		// 		return () => {console.log(this.number)};
+		// 	}
+		// };
+
+		// invoice.process()();
+
+		// here this keyword will point to function context ,where the value of 'this' keyword is invoice . 'this' keyword value in process function is invoice . 
+
+	// example 5 
+		// var invoice = {
+		// 	number: 123 ,
+		// 	process : function (){
+		// 		return () => {console.log(this.number)}
+		// 	}
+		// }	
+
+		// var newInvoice = {
+		// 	number : 456
+		// }
+		// invoice.process.call(newInvoice)
+		// invoice.process().bind(newInvoice)();
+		// invoice.process will return a arrow function 
+		// here bind methods target is arrow function in process . bind, call method doesnot work on arrow function 
+		// so newInvoice object will not be the value for this keyword 
+
+	// example 6
+
+		var getPrice = () => 5.99;
+		console.log(getPrice.hasOwnProperty('prototype'));
+		//  generelly functions have prototype property , but arrow functions do not have prototype property
+		
+
+	</script>
+</body>
+</html>

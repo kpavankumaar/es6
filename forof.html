@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>for of </title>
+</head>
+<body>
+	<script type="text/javascript">
+		// for of works with iterables 
+		'use strict'
+		// example 1
+		var catagories = ['hardware','software','vaporware'];
+		for ( var item of catagories){
+			console.log(item);
+		}
+		// for of works like for-loop iterating through array of elements 
+		// example 2
+		var codes = 'ABCDF';
+		var count = 0;
+		for(var code of codes){
+			count++;
+			console.log(code , count);
+		}
+		
+
+		
+	</script>
+</body>
+</html>

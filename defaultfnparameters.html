@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>default Function parameters </title>
+</head>
+<body>
+	<script type="text/javascript">
+		'use strict'
+		var getProduct = function(productId = 1000, type = 'software'){
+			console.log(productId + ', '+ type);
+		}
+		getProduct(undefined, 'hardware');
+
+		// javascript will not assign undefined as productId value is 1000, but it will replace software with hardware . 
+		// javascript will choose a value over undefined ;
+
+
+		var getTotal = function (price, tax = price * 0.07){
+			console.log(price + tax);
+			console.log(arguments.length);
+		}
+		getTotal(5.00);
+		// parameters in the above example has its own scope .
+		// output for first console statement is 5.35
+		// output for second console statement is 1 . javascript considers arugments sent when function is called.
+
+		
+
+	</script>
+</body>
+</html>
